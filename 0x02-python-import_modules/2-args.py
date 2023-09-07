@@ -12,3 +12,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(a))
     for i in range(a):
             print("{}: {}".format(i + 1, args[i + 1]))
+
