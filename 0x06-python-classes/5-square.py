@@ -36,8 +36,7 @@ class Square:
         """set __size
         Args:
             value (int): the size of a size of the square
-        Returns:
-            None
+        Returns: None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -47,13 +46,11 @@ class Square:
             else:
                 self.__size = value
     def my_print(self):
-        """ print square
+        """print the square
         Returns: None
         """
         if self.__size == 0:
             print()
             return
         for i in range(self.__size):
-            for j in range(self.__size):
-                print("#", end="")
-            print()
+            print("".join(["#" for j in range(self.__size)]))
