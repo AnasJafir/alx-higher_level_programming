@@ -5,7 +5,7 @@
 class Square:
     """Represent a square
     Attributes:
-        __size (int): length of a side of the square
+        __size (int): size of a side of the square
     """
     def __init__(self, size=0):
         """initialization of the square
@@ -17,7 +17,7 @@ class Square:
         self.size = size
 
     def area(self):
-        """calculates the area of the square
+        """calculate the area of the square
         Returns:
             The area of the square
         """
@@ -25,7 +25,7 @@ class Square:
 
     @property
     def size(self):
-        """get __size
+        """getter of __size
         Returns:
             The size of the square
         """
@@ -33,10 +33,11 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """set __size
+        """setter of __size
         Args:
-            value (int): the size of a size of the square
-        Returns: None
+            value (int): size of a side of the square
+        Returns:
+            None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -45,9 +46,11 @@ class Square:
                 raise ValueError("size must be >= 0")
             else:
                 self.__size = value
+
     def my_print(self):
         """print the square
-        Returns: None
+        Returns:
+            None
         """
         if self.__size == 0:
             print()
