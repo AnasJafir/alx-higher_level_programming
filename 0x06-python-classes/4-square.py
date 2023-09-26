@@ -17,7 +17,6 @@ class Square:
 
     def area(self):
         """ Defines the current square area
-
         Returns: 
         the current square area
         """
@@ -33,6 +32,7 @@ class Square:
         """set the size
         Args:
         value (int): the size of the square
+        Returns: None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
