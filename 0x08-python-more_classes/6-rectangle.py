@@ -6,9 +6,8 @@ Class defining a rectangle
 
 class Rectangle:
     """class of rectangle"""
-    
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         """ Instantiation with optional width and height """
         if not isinstance(width, int):
