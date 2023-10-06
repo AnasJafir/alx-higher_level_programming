@@ -34,3 +34,27 @@ TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 >>> add_integer(2.5, 3.7)
 5
 
+>>> add_integer("unicorn")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(5, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(3.7)
+101
+
+>>> add_integer([1, 2, 3])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer((1, 2, 3))
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer({"a": 1, "b": 2, "c": 3})
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
