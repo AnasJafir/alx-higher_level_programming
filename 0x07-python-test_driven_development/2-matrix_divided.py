@@ -30,6 +30,7 @@ def matrix_divided(matrix, div):
                                 "of integers/floats")
     return [[round(i / div, 2) for i in lst] for lst in matrix]
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")
