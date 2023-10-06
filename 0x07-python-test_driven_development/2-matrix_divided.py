@@ -13,23 +13,23 @@ def matrix_divided(matrix, div):
 
     Return: A list results.
     """
-    new_list = []
-    if type(div) not in [int, float]:
+    if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-    for i in matrix:
-        lst = []
-        if type(i) is not list:
-            raise TypeError("matrix must be a matrix\
- (list of lists) of integers/floats")
-        if(len(matrix[0]) != len(i)):
-            raise TypeError("Each row of the matrix\
- must have the same size")
-        for j in range(len(i)):
-            if (type(i[j]) is not int) and (type(i[j]) is not float):
-                raise TypeError("matrix must be a matrix\
-(list of lists) of integers/floats")
-            lst.append(round(((i[j]) / div), 2))
-        new_list.append(lst)
-    return new_list
+    if not isinstance(matrix, list) or len(matrix) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) " +
+                        "of integers/floats")
+    for lst in matrix:
+        if not isinstance(lst, list) or len(lst) == 0:
+            raise TypeError("matrix must be a matrix (list of lists) " +
+                            "of integers/floats")
+        if len(lst) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+        for i in lst:
+            if not isinstance(i, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) " +
+                                "of integers/floats")
+    return [[round(i / div, 2) for i in lst] for lst in matrix]
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/2-matrix_divided.txt")
