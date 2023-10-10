@@ -19,6 +19,7 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
+
     def to_json(self, attrs=None):
         """
         Method to retrieve a dictionary representation of a Student
@@ -29,7 +30,8 @@ class Student:
         for key, value in self.__dict__.items():
             if key in attrs:
                 new_dict[key] = value
-        return new_dict 
+        return new_dict
+
     def reload_from_json(self, json):
         '''replaces all attributes of the Student'''
         for key, value in json.items():
