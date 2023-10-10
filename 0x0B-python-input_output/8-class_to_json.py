@@ -6,7 +6,8 @@
 
 def class_to_json(obj):
     """
-    class_to_json - returns the dictionary description with simple data structure
+    class_to_json - returns the dictionary description
+    with simple data structure
     Args:
         obj: instance of a class
     Return: the dictionary description with simple data structure
