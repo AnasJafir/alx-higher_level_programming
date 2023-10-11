@@ -1,0 +1,9 @@
+Import module:
+    >>> MyList = __import__('1-my_list').MyList
+Test cases:
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+
