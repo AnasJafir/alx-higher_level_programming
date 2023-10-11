@@ -50,9 +50,9 @@ Test cases:
     Traceback (most recent call last):
     TypeError: Jafir must be an integer
 
-    >>> bg.integer_validator("Anas", "anas")
+    >>> bg.integer_validator("Bar", "bar")
     Traceback (most recent call last):
-    TypeError: Anas must be an integer
+    TypeError: Bar must be an integer
 
 
     >>> bg.integer_validator("zar", True)
