@@ -9,10 +9,10 @@ class Square(Rectangle):
     """class defines square and inhertis from Rectangle"""
     def __init__(self, size):
         """initialization of attributes"""
-        super().__init__(size, size)
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         """function to calculate area"""
-
         return self.__size ** 2
