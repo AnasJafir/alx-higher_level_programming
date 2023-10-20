@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Module for Base Class"""
+"""Module for Rectangle Class"""
 
 
 class Rectangle(Base):
     """Rectangle Class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
         super().__init__(id)
@@ -11,7 +12,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         """ retrieve width """
@@ -21,12 +22,12 @@ class Rectangle(Base):
     def height(self):
         """ retrieve height """
         return self.__height
-    
+
     @property
     def x(self):
         """ retrieve x """
         return self.__x
-    
+
     @property
     def y(self):
         """ retrieve y """
@@ -41,7 +42,7 @@ class Rectangle(Base):
     def height(self, value):
         """ set height """
         self.__height = value
-    
+
     @x.setter
     def height(self, value):
         """ set x """
