@@ -22,7 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set width"""
-        self.integer_validator("width", value)
+        self.integer_validator("width", value, False)
         self.__width = value
 
     @property
@@ -33,7 +33,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """set height"""
-        self.integer_validator("height", value)
+        self.integer_validator("height", value, False)
         self.__height = value
 
     @property
@@ -44,7 +44,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """set x"""
-        self.integer_validator("x", value)
+        self.integer_validator("x", value, True)
         self.__x = value
 
     @property
@@ -55,14 +55,14 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """set y"""
-        self.integer_validator("y", value)
+        self.integer_validator("y", value, True)
         self.__y = value
 
-    def integer_validator(self, name, value):
+    def integer_validator(self, name, value, eq_to_zero=True):
         """Validator of all setter methods and instantiation"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0:
+        if eq_to_zero and value < 0:
             raise ValueError("{} must be >= 0".format(name))
-        elif value <= 0:
+        elif not eq_to_zero and value <= 0:
             raise ValueError("{} must be > 0".format(name))
