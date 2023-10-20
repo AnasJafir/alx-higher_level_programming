@@ -124,3 +124,5 @@ class TestSquareMethods(unittest.TestCase):
         self.assertEqual(s1.x, 2)
         self.assertEqual(s1.y, 3)
 
+if __name__ == "__main__":
+    unittest.main()

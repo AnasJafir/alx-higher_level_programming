@@ -354,3 +354,5 @@ class TestRectangleMethods(unittest.TestCase):
         load_file = Rectangle.load_from_file()
         self.assertEqual(load_file, [])
 
+if __name__ == "__main__":
+    unittest.main()
