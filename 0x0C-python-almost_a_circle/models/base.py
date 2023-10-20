@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """Module for Base Class"""
+import json
+import csv
+import os.path
 
 
 class Base:
