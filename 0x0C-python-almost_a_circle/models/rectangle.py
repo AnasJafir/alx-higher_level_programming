@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Module for Rectangle Class"""
+"""Module for Rectangle class"""
+from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle Class"""
+    """Rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
@@ -12,43 +13,43 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
-        """ retrieve width """
+        """Width of Rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ set width """
+        """set width"""
         self.__width = value
 
     @property
     def height(self):
-        """ retrieve height """
+        """Height of Rectangle"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
-        """ set height """
+        """set height"""
         self.__height = value
 
     @property
     def x(self):
-        """ retrieve x """
+        """x of Rectangle"""
         return self.__x
-    
+
     @x.setter
-    def height(self, value):
-        """ set x """
+    def x(self, value):
+        """set x"""
         self.__x = value
-    
+
     @property
     def y(self):
-        """ retrieve y """
+        """y of Rectangle"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ set y """
+        """set y"""
         self.__y = value
