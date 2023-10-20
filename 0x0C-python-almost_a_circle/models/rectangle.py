@@ -70,3 +70,28 @@ class Rectangle(Base):
     def area(self):
         """Calculates area of Rectangle"""
         return self.width * self.height
+
+    def display(self):
+        """Print Rectangle of #"""
+        s = ('#' * self.width + '\n') * self.height
+        print(s, end='')
+
+    def __str__(self):
+        """Returns Rectangle informations"""
+        infos = '[{}] ({}) {}/{} - {}/{}'.\
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
+                   self.height)
+        return infos
+
+    def update_class(self, id=None, width=None, height=None, x=None, y=None):
+        """Update Class Rectangle"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
