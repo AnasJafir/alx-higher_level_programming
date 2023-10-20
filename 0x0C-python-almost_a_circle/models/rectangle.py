@@ -109,3 +109,10 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args):
+        """update method"""
+        if args is not None and len(args) != 0:
+            lst = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, lst[i], args[i])
