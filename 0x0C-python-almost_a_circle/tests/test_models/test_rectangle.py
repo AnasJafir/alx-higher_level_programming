@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+"""unitest for models.rectangle"""
 import unittest
-from models.base import Base
-from models.rectangle import Rectangle
 from io import StringIO
 import sys
-import json
+from models.base import Base
+from models.rectangle import Rectangle
 import pep8
 
 
 class TestRectangle(unittest.TestCase):
     """class TestRectangle"""
+
     def test_id(self):
         """check id"""
         Base._Base__nb_objects = 0
@@ -22,14 +23,14 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 10)
         self.assertIsInstance(r2, Rectangle)
 
-    def test_numObj(self):
+    def test_num_obj(self):
         """check number of objects"""
         Base._Base__nb_objects = 0
         r3 = Rectangle(10, 2, 0, 0)
         r4 = Rectangle(5, 5)
         self.assertEqual(r4.id, 2)
 
-    def test_getterAndSetter(self):
+    def test_getter_and_setter(self):
         """checks getter and setter"""
         Base._Base__nb_objects = 0
         r5 = Rectangle(10, 2, 0, 0)
@@ -173,5 +174,10 @@ class TestRectangle(unittest.TestCase):
     def test_pep8_test(self):
         """tests for pep8"""
         p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['tests/test_models/test_base.py'])
+        p = p8.check_files(['tests/test_models/test_rectangle.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
+
+
+if __name__ == "__main__":
+    unittest.main()
+
