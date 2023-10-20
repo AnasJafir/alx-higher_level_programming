@@ -38,11 +38,22 @@ class Square(Rectangle):
             self.y = y
 
     def update(self, *args, **kwargs):
-        """update method"""
-        if args:
-            self.update_class(*args)
-        elif kwargs:
-            self.update_class(**kwargs)
+        """ update method """
+        if args is not None and len(args) != 0:
+            lst = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if lst[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, lst[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """Returns dictionary representation of square."""
