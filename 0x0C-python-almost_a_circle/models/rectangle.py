@@ -110,9 +110,12 @@ class Rectangle(Base):
         if y is not None:
             self.y = y
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update method"""
         if args is not None and len(args) != 0:
             lst = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, lst[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
