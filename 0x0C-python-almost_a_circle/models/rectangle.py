@@ -97,19 +97,6 @@ class Rectangle(Base):
         if y is not None:
             self.y = y
 
-    def update_class(self, id=None, width=None, height=None, x=None, y=None):
-        """Update Class Rectangle"""
-        if id is not None:
-            self.id = id
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
-        if x is not None:
-            self.x = x
-        if y is not None:
-            self.y = y
-
     def update(self, *args, **kwargs):
         """update method"""
         if args is not None and len(args) != 0:
