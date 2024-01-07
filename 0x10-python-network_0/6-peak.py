@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Peak Module"""
+
+
 def find_peak(list_of_integers):
     """Method to find the peak of a list"""
     lst = list_of_integers
