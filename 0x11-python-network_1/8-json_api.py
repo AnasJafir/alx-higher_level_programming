@@ -7,16 +7,16 @@ with the letter as a params
 
 
 import requests
-import sys
+from sys import argv
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     par = {'q': q}
-    if len(sys.argv) == 2:
-        q = sys.argv[1]
+    if len(argv) > 1:
+        q = argv[1]
     else:
         q = ""
-    reponse = requests.post(url, par)
+    response = requests.post(url, par)
     try:
         data = response.json()
         id, name = data.get('id'), data.get('name')
