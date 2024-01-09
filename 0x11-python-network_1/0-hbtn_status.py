@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Python script that fetches an URL"""
+
+
 import urllib.request
 
 if __name__ == "__main__":
@@ -9,6 +11,6 @@ if __name__ == "__main__":
         body = response.read()
 
     print("Body response:")
-    print("    - type:", type(body))
-    print("    - content:", body)
-    print("    - utf8 content:", body.decode('utf-8'))
+    print("\t- type: {}".format(type(body)))
+    print("\t- content: {}".format(body))
+    print("\t- utf8 content: {}".format(body.decode('utf-8')))
