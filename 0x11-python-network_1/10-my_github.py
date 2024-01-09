@@ -4,14 +4,14 @@ Script that takes Github credentials
 and display id using Github API
 """
 
+import sys
 import requests
 from requests.auth import HTTPBasicAuth
-import sys
 
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
-    url = "https://api.github.com/users/{}".format(username)
-    response = requests.get(url, auth=HTTPBasicAuth(username, password))
-    user_id = response.json().get('id')
+    auth = HTTPBasicAuth(username, password)
+    response = requests.get("https://api.github.com/user", auth=auth)
+    user_id = response.json().get("id")
     print(user_id)
