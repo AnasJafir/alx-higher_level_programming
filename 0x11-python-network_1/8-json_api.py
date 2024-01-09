@@ -7,21 +7,17 @@ with the letter as a params
 
 
 import requests
-from sys import argv
+import sys
 
 if __name__ == "__main__":
+    q = sys.argv[1] if len(sys.argv) > 1 else ""
     url = "http://0.0.0.0:5000/search_user"
-    par = {'q': q}
-    if len(argv) > 1:
-        q = argv[1]
-    else:
-        q = ""
-    response = requests.post(url, par)
+    response = requests.post(url, data={'q': q})
+
     try:
-        data = response.json()
-        id, name = data.get('id'), data.get('name')
-        if data:
-            print("[{}] {}".format(data['id'], data['name']))
+        resp_dict = response.json()
+        if resp_dict:
+            print(f"[{resp_dict['id']}] {resp_dict['name']}")
         else:
             print("No result")
     except ValueError:
