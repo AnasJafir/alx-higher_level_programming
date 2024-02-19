@@ -1,27 +1,36 @@
 #!/usr/bin/python3
-"""matrix_divided Module"""
+"""Module for matrix_divided method."""
 
 
 def matrix_divided(matrix, div):
-    """Method that divides elements of matrix"""
-    if type(matrix) != list:
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-            )
-    elif type(div) not in (int, float):
+    """Divides all elements of matrix by div.
+    Args:
+        matrix: List of lists containing int or float
+        div: number to divide matrix by
+    Returns:
+        list: List of lists representing divided matrix.
+    Raises:
+        TypeError: If matrix is not list of lists containing int or float.
+        TypeError: If sublists are not all same size.
+        TypeError: If div is not int or float.
+        ZeroDivisionError: If div is zero.
+    """
+    if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    elif div == 0:
-        raise ZeroDivisionError("division by zero")
-    new_matrix = []
-    for i in range(len(matrix)):
-        divided = []
-        if len(matrix[i]) != len(matrix[0]):
+    if not isinstance(matrix, list) or len(matrix) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) " +
+                        "of integers/floats")
+    for row in matrix:
+        if not isinstance(row, list) or len(row) == 0:
+            raise TypeError("matrix must be a matrix (list of lists) " +
+                            "of integers/floats")
+        if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
-        for elem in matrix[i]:
-            result = elem/div
-            divided.append(round(result, 2))
-        new_matrix.append(divided)
-    return new_matrix
+        for x in row:
+            if not isinstance(x, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) " +
+                                "of integers/floats")
+    return [[round(x / div, 2) for x in row] for row in matrix]
 
 
 if __name__ == "__main__":
