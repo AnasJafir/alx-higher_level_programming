@@ -14,3 +14,9 @@ Import module:
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
+
+    >>> text_indentation("Line with a blank line below.\n\nNext line after blank.")
+    Line with a blank line below.
+    <BLANKLINE>
+    <BLANKLINE>
+    Next line after blank.
