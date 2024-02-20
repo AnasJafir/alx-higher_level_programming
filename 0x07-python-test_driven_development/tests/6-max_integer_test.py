@@ -33,6 +33,10 @@ class TestStringMethods(unittest.TestCase):
         """Check if it handles zero correctly."""
         self.assertEqual(max_integer([0, 10, 20]), 20)
 
+    def test_empty_list(self):
+        """Check if it returns None for an empty list"""
+        self.assertEqual(max_integer([]), None)
+
 
 if __name__ == "__main__":
     unittest.main()
