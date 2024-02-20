@@ -1,20 +1,22 @@
 #!/usr/bin/python3
-"""Module of indentation"""
+"""Module for text_indentation method."""
 
 
 def text_indentation(text):
-    """Method prints a new line after specific chars"""
+    """Method for adding 2 new lines after '.?:' chars.
+
+    Args:
+        text: The str text.
+
+    Raises:
+        TypeError: If text is not a str.
+    """
     if not isinstance(text, str):
-        raise TypeError('text must be a string')
+        raise TypeError("text must be a string")
 
-    skip_spaces = False
+    for delim in ".?:":
+        # print(delim, text.split(delim))
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
 
-    for i in range(len(text)):
-        if text[i] in ['.', '?', ':']:
-            print(text[i])
-            skip_spaces = True
-        elif text[i] == ' ' and skip_spaces:
-            continue
-        else:
-            print(text[i], end='')
-            skip_spaces = False
+    print(text, end="")
