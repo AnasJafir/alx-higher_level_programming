@@ -17,7 +17,7 @@ class Rectangle():
         self.__width = width
         self.__height = height
 
-    @property.getter
+    @property
     def width(self):
         """Method to retrieve value of width"""
         return self.__width
@@ -32,7 +32,7 @@ class Rectangle():
         else:
             self.__width = value
 
-    @property.getter
+    @property
     def height(self):
         """Method to retrieve value of height"""
         return self.__height
