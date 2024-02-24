@@ -17,9 +17,18 @@ class LockedClass:
             raise AttributeError(
                 f"'LockedClass' object has no attribute '{attr}'"
                 )
-        elif attr == "__dict__":
+        else:
+            super().__setattr__(attr, value)
+
+    def __getattribute__(self, attr):
+        """
+            Override the reserved method `getattr` to preven retrieval of any
+            attributes, including instance's dict.
+
+            Args:
+                name (:obj:`str`): A string.
+        """
+        if attr == "__dict__":
             raise AttributeError(
                 f"'LockedClass' object has no attribute '{attr}'"
                 )
-        else:
-            super().__setattr__(attr, value)
