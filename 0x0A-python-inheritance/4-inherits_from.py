@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Inheritance Check Module"""
+""" Only sub class of """
 
 
 def inherits_from(obj, a_class):
-    """
-    Method that returns :
-    True ifthe object is an instance of a class that inherited
-    (directly or indirectly) from the specified class
-    Otherwise, False
+    """ function that returns True if the object is an instance
+    of a class that inherited (directly or indirectly) from the
+    specified class
     """
     return (isinstance(obj, a_class) and type(obj) != a_class)
