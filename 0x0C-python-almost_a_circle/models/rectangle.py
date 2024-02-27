@@ -89,7 +89,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Method that assigns an argument to each attribute"""
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             kwargs = {}
             if len(args) >= 1:
                 if type(args[0]) != int and args[0] is not None:
