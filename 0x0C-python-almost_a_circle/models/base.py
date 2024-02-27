@@ -11,5 +11,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Base.__nb_objects += 1
+            Base.__nb_objects += 1 #After each creation of an instance of Base class, a new id number should be assigned
             self.id = Base.__nb_objects
