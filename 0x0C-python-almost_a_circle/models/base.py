@@ -36,7 +36,7 @@ class Base:
         lst = []
         filename = cls.__name__ + '.json'
         if list_objs is None or list_objs == []:
-            return lst
+            return "[]"
         for obj in list_objs:
             cls.to_json_string([obj.to_dictionary()])
             lst.append(obj.to_dictionary())
