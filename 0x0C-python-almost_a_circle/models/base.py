@@ -36,7 +36,9 @@ class Base:
         if list_objs is None or list_objs == []:
             json_str = "[]"
         else:
-            json_str = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            json_str = cls.to_json_string(
+                [obj.to_dictionary() for obj in list_objs]
+                )
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
-                f.write(json_str)
+            f.write(json_str)
