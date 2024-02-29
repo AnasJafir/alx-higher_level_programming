@@ -120,9 +120,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Method that  returns a dictionary with the object attributes."""
         return {
+            'x': self.__x,
+            'y': self.__y,
             'id': self.id,
-            'x': self.__width,
-            'y': self.__height,
-            'width': self.__x,
-            'height': self.__y
+            'height': self.__height,
+            'width': self.__width
         }
