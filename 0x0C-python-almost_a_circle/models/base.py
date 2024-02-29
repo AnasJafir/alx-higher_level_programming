@@ -41,4 +41,4 @@ class Base:
             cls.to_json_string([obj.to_dictionary()])
             lst.append(obj.to_dictionary())
         with open(filename, 'w') as f:
-            f.write(Base.to_json_string(lst))
+            f.write(cls.to_json_string(lst))
