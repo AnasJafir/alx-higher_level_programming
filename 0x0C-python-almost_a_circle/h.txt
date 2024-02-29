@@ -1,0 +1,85 @@
+can yo update those test files to handle with this :
+
+Test of Base() for assigning automatically an ID exists
+Test of Base() for assigning automatically an ID + 1 of the previous exists
+Test of Base(89) saving the ID passed exists
+Test of Base.to_json_string(None) exists
+Test of Base.to_json_string([]) exists
+Test of Base.to_json_string([ { 'id': 12 }]) exists
+Test of Base.to_json_string([ { 'id': 12 }]) returning a string exists
+Test of Base.from_json_string(None) exists
+Test of Base.from_json_string("[]") exists
+Test of Base.from_json_string('[{ "id": 89 }]') exists
+Test of Base.from_json_string('[{ "id": 89 }]') returning a list exists
+Test of Rectangle(1, 2) exists
+Test of Rectangle(1, 2, 3) exists
+Test of Rectangle(1, 2, 3, 4) exists
+Test of Rectangle("1", 2) exists
+Test of Rectangle(1, "2") exists
+Test of Rectangle(1, 2, "3") exists
+Test of Rectangle(1, 2, 3, "4") exists
+Test of Rectangle(1, 2, 3, 4, 5) exists
+Test of Rectangle(-1, 2) exists
+Test of Rectangle(1, -2) exists
+Test of Rectangle(0, 2) exists
+Test of Rectangle(1, 0) exists
+Test of Rectangle(1, 2, -3) exists
+Test of Rectangle(1, 2, 3, -4) exists
+Test of area() exists
+Test of __str__() for Rectangle exists
+Test of display() without x and y exists
+Test of display() without y exists
+Test of display() exists
+Test of to_dictionary() in Rectangle exists
+Test of update() in Rectangle exists
+Test of update(89) in Rectangle exists
+Test of update(89, 1) in Rectangle exists
+Test of update(89, 1, 2) in Rectangle exists
+Test of update(89, 1, 2, 3) in Rectangle exists
+Test of update(89, 1, 2, 3, 4) in Rectangle exists
+Test of update(**{ 'id': 89 }) in Rectangle exists
+Test of update(**{ 'id': 89, 'width': 1 }) in Rectangle exists
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle exists
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle exists
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle exists
+Test of Rectangle.create(**{ 'id': 89 }) in Rectangle exists
+Test of Rectangle.create(**{ 'id': 89, 'width': 1 }) in Rectangle exists
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle exists
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle exists
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle exists
+Test of Rectangle.save_to_file(None) in Rectangle exists
+Test of Rectangle.save_to_file([]) in Rectangle exists
+Test of Rectangle.save_to_file([Rectangle(1, 2)]) in Rectangle exists
+Test of Rectangle.load_from_file() when file doesn’t exist exists
+Test of Rectangle.load_from_file() when file exists exists
+Test of Square(1) exists
+Test of Square(1, 2) exists
+Test of Square(1, 2, 3) exists
+Test of Square("1") exists
+Test of Square(1, "2") exists
+Test of Square(1, 2, "3") exists
+Test of Square(1, 2, 3, 4) exists
+Test of Square(-1) exists
+Test of Square(1, -2) exists
+Test of Square(1, 2, -3) exists
+Test of Square(0) exists
+Test of __str__() for Square exists
+Test of to_dictionary() in Square exists
+Test of update() in Square exists
+Test of update(89) in Square exists
+Test of update(89, 1) in Square exists
+Test of update(89, 1, 2) in Square exists
+Test of update(89, 1, 2, 3) in Square exists
+Test of update(**{ 'id': 89 }) in Square exists
+Test of update(**{ 'id': 89, 'size': 1 }) in Square exists
+Test of update(**{ 'id': 89, 'size': 1, 'x': 2 }) in Square exists
+Test of update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }) in Square exists
+Test of Square.create(**{ 'id': 89 }) in Square exists
+Test of Square.create(**{ 'id': 89, 'size': 1 }) in Square exists
+Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2 }) in Square exists
+Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }) in Square exists
+Test of Square.save_to_file(None) in Square exists
+Test of Square.save_to_file([]) in Square exists
+Test of Square.save_to_file([Square(1)]) in Square exists
+Test of Square.load_from_file() when file doesn’t exist exists
+Test of Square.load_from_file() when file exists exists

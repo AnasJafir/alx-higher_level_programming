@@ -3,6 +3,37 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+    def test_init(self):
+        # Test Rectangle initialization
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(1, 2, 3)
+        r3 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r3.y, 4)
+
+    def test_init_with_strings(self):
+        # Test Rectangle initialization with strings
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+
+    def test_init_with_negatives(self):
+        # Test Rectangle initialization with negative values
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
     def test_area(self):
         # Test area calculation
         r = Rectangle(3, 4)
@@ -11,8 +42,12 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         # Test display method
         r = Rectangle(2, 3)
-        # Since it's printing, we can't directly test output
         self.assertEqual(r.display(), None)
+
+    def test_str(self):
+        # Test __str__ method
+        r = Rectangle(2, 3, 4, 5, 6)
+        self.assertEqual(str(r), "[Rectangle] (6) 4/5 - 2/3")
 
     def test_update(self):
         # Test update method
