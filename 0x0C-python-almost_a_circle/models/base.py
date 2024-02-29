@@ -51,3 +51,10 @@ class Base:
             return []
         lst = json.loads(json_string)
         return lst
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Method that returns an instance with all attributes already set"""
+        new_instance = object.__new__(cls)
+        new_instance.update(**dictionary)
+        return new_instance
