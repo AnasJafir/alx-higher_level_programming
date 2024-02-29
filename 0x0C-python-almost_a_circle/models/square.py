@@ -39,19 +39,19 @@ class Square(Rectangle):
                     raise TypeError("id must be an integer")
                 self.id = args[0]
             if len(args) > 1:
-                self.__width = args[1]
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
             if len(args) > 3:
-                self.__x = args[3]
-            if len(args) > 4:
-                self.__y = args[4]
+                self.y = args[3]
         for key, value in kwargs.items():
             if key == "id":
                 if type(value) != int and value is not None:
                     raise TypeError("id must be an integer")
                 self.id = value
             if key == "size":
-                self.__width = value
+                self.size = value
             if key == "x":
-                self.__x = value
+                self.x = value
             if key == "y":
-                self.__y = value
+                self.y = value
