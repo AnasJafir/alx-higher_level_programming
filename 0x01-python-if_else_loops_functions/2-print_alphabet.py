@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-alphabets = "abcdefghijklmnopqrstuvwxyz"
-for letter in alphabets:
-    print(letter, end='')
+for alphabet in range(97, 123):
+    print("{}".format(chr(alphabet)), end='')
